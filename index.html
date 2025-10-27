@@ -1,0 +1,325 @@
+    <!doctype html>
+    <html lang="id">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portofolio — Syah Jiddan Akbar</title>
+    <meta name="description" content="Portofolio - Syah Jiddan Akbar" />
+    <style>
+    :root {
+    --bg:#0f1724;
+    --card:#0b1220;
+    --muted:#9aa6b2;
+    --accent:#7c5cff;
+    --glass:rgba(255,255,255,0.04);
+    --glass-2:rgba(255,255,255,0.02);
+    --radius:14px;
+    --max-width:1100px;
+    font-family:Inter,system-ui,sans-serif;
+    color-scheme:dark;
+    }
+
+    /* Reset */
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html,body {
+    height:100%;
+    background:linear-gradient(180deg,var(--bg) 0%,#071126 60%);
+    color:#e6eef6;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    font-size:16px;
+    }
+
+    /* Layout Container */
+    .container {
+    max-width:var(--max-width);
+    margin:0 auto;
+    padding:16px;
+    }
+
+    /* Header */
+    header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    background:rgba(15,23,36,0.9);
+    backdrop-filter:blur(10px);
+    border-radius:12px;
+    padding:12px 18px;
+    position:sticky;
+    top:0;
+    z-index:50;
+    }
+    .brand {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    }
+    .logo {
+    width:50px;
+    height:50px;
+    border-radius:12px;
+    overflow:hidden;
+    }
+    .logo img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:12px;
+    }
+    .name { font-weight:700; font-size:1rem; }
+    .role { color:var(--muted); font-size:.8rem; }
+
+    nav {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:8px;
+    }
+    nav a {
+    text-decoration:none;
+    color:var(--muted);
+    padding:8px 14px;
+    border-radius:8px;
+    font-size:.9rem;
+    transition:.2s;
+    }
+    nav a:hover { background:rgba(255,255,255,0.08); color:#fff; }
+    nav a:active { transform:scale(.96); background:rgba(124,92,255,0.2); color:#fff; }
+
+    /* Main Grid */
+    main {
+    display:flex;
+    flex-direction:row;
+    gap:20px;
+    margin-top:20px;
+    }
+    .hero, aside {
+    flex:1;
+    }
+
+    /* Hero */
+    .hero {
+    background:rgba(255,255,255,0.02);
+    border:1px solid var(--glass);
+    border-radius:12px;
+    padding:18px;
+    }
+    .h1 {
+    font-size:1.4rem;
+    font-weight:800;
+    margin-bottom:6px;
+    }
+    .lead {
+    color:var(--muted);
+    font-size:.95rem;
+    margin-bottom:12px;
+    }
+    .cta-row {
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:16px;
+    }
+    .btn {
+    padding:10px 16px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    border:1px solid rgba(255,255,255,0.1);
+    color:#e6eef6;
+    transition:.2s;
+    }
+    .btn.primary {
+    background:linear-gradient(90deg,var(--accent),#3dd1ff);
+    color:#071126;
+    border:none;
+    }
+    .btn:hover { opacity:0.9; }
+
+    /* Projects */
+    .section { margin-top:20px; }
+    .section h3 { margin-bottom:10px; }
+    .projects {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    gap:10px;
+    }
+    .card {
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--glass-2);
+    border-radius:12px;
+    padding:12px;
+    transition:.2s;
+    }
+    .card:hover { transform:translateY(-4px); }
+    .card .tag {
+    font-size:12px;
+    color:var(--muted);
+    background:rgba(255,255,255,0.08);
+    border-radius:6px;
+    display:inline-block;
+    padding:4px 6px;
+    }
+    .card h4 { margin:8px 0 4px; font-size:1rem; }
+    .card p { font-size:.9rem; color:var(--muted); }
+
+    /* Sidebar */
+    aside .panel {
+    background:rgba(255,255,255,0.02);
+    border:1px solid var(--glass);
+    border-radius:12px;
+    padding:18px;
+    }
+    .skills {
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    }
+    .skill {
+    background:rgba(255,255,255,0.05);
+    border-radius:8px;
+    padding:6px 10px;
+    font-size:.85rem;
+    }
+    .contact-form {
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:10px;
+    }
+    .input {
+    padding:10px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.1);
+    background:transparent;
+    color:#fff;
+    }
+    textarea.input { resize:vertical; }
+
+    /* Footer */
+    footer {
+    margin-top:30px;
+    border-top:1px dashed rgba(255,255,255,0.1);
+    padding-top:10px;
+    text-align:center;
+    font-size:.8rem;
+    color:var(--muted);
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width:900px) {
+    main { flex-direction:column; }
+    .hero, aside { width:100%; }
+    }
+
+    @media (max-width:600px) {
+    .name { font-size:.95rem; }
+    .role { font-size:.75rem; }
+    nav { justify-content:center; width:100%; }
+    .h1 { font-size:1.2rem; text-align:center; }
+    .lead { font-size:.9rem; text-align:center; }
+    .cta-row { justify-content:center; }
+    .btn { width:100%; text-align:center; }
+    .projects { grid-template-columns:1fr; }
+    footer { font-size:.75rem; }
+    }
+    </style>
+    </head>
+    <body>
+    <div class="container">
+    <header>
+    <div class="brand">
+        <div class="logo"><img src="Yuyuuuzuha.jpg" alt="Foto Syah Jiddan Akbar"></div>
+        <div>
+        <div class="name">Syah Jiddan Akbar</div>
+        <div class="role">Desainer Grafis dan Web</div>
+        </div>
+    </div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    </header>
+
+    <main>
+    <section class="hero">
+    <h1 class="h1">Halo — saya Syah Jiddan Akbar.</h1>
+    <p class="lead">Saya membuat antarmuka yang sederhana, cepat, dan menyenangkan untuk dipakai. Fokus pada frontend, pengalaman pengguna, dan performa.</p>
+    <div class="cta-row">
+        <a href="#projects" class="btn primary">Lihat Proyek</a>
+        <a href="#contact" class="btn">Hire me</a>
+    </div>
+    <div class="section" id="about">
+        <h3>Tentang Saya</h3>
+        <p>Saya memiliki pengalaman dalam membangun aplikasi web menggunakan HTML, CSS, dan JavaScript. Selain itu saya juga berpengalaman dalam bidang desain grafis.</p>
+    </div>
+
+    <div class="section" id="projects">
+        <h3>Proyek Terpilih</h3>
+        <div class="projects">
+        <div class="card">
+            <div class="tag">Figma</div>
+            <h4>UI/UX Design Aplikasi Mobile</h4>
+            <p>Rancangan antarmuka dengan fokus kemudahan navigasi dan pengalaman pengguna yang intuitif.</p>
+        </div>
+        <div class="card">
+            <div class="tag">Canva</div>
+            <h4>Branding & Konten Sosial Media</h4>
+            <p>Membuat desain feed Instagram, poster promosi, dan banner digital bergaya modern.</p>
+        </div>
+        <div class="card">
+            <div class="tag">Photoshop</div>
+            <h4>Manipulasi dan Editing Foto</h4>
+            <p>Pembuatan mockup produk dan retouching foto untuk keperluan profesional.</p>
+        </div>
+        <div class="card">
+            <div class="tag">GDevelop</div>
+            <h4>Game Design — Platformer 2D</h4>
+            <p>Mengembangkan game 2D sederhana dengan animasi karakter dan sistem skor.</p>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <aside>
+    <div class="panel">
+        <h3>Keahlian</h3>
+        <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">Photoshop</div>
+        <div class="skill">Figma</div>
+        <div class="skill">Canva</div>
+        </div>
+
+        <div class="section" id="contact">
+        <h3>Kontak</h3>
+        <p class="small">Isi form atau kirim email ke <strong>syahjdn@gmail.com</strong>.</p>
+        <form class="contact-form">
+            <input class="input" type="text" placeholder="Nama">
+            <input class="input" type="email" placeholder="Email">
+            <textarea class="input" rows="4" placeholder="Pesan singkat"></textarea>
+            <button type="button" class="btn primary">Kirim</button>
+        </form>
+        </div>
+
+        <div style="margin-top:10px;font-size:.8rem;color:var(--muted)">Lokasi • Indonesia</div>
+    </div>
+    </aside>
+    </main>
+
+    <footer>
+    © <span id="year"></span> Syah Jiddan Akbar — Semua hak cipta. <br>
+    Made with IMPHNEN — Ingin Menjadi Programmer Handal Namun Enggan Ngoding
+    </footer>
+    </div>
+
+    <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    </body>
+    </html>
